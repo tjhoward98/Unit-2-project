@@ -3,7 +3,7 @@
 // Use append methods to add functionality to the page so as to not degrade or eliminate the readability of browsers that do not have javascript enabled
 
 
-// Globals
+//  global scopes are used by multiple functions 
 var studentItems = $('.student-item');
 var studentSearch ='<div class="student-search"><input id="search" placeholder="Search for students..."><button>Search</button></div>';
 var pagination ='<div class="pagination"><ul></ul></div>';

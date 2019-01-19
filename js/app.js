@@ -24,7 +24,7 @@ function pages(list) {
 	return pagesArray;
 }
 
-// After generating the pages array of students, display the first page, hide the rest. 
+// After generating the pages array of students, display the first page, hide the rest.
 function showPages(pageNumber, pageList) {
   $(".student-list li").hide();
   $.each(pageList, function(index, page){
@@ -36,7 +36,8 @@ function showPages(pageNumber, pageList) {
   });
 }
 
-// Append buttons to page. The number of pages to show is found from the pageList.length. Add & remove active class on click, and on pageload add active class to first button.
+// Append buttons to page. The number of pages to show is found from the pageList.
+// length. Add & remove active class on click, and on pageload add active class to first button.
 function appendButtons(pageList) {
 	$('.page').append(pagination);
 	var numPages = pageList.length;
@@ -46,7 +47,7 @@ function appendButtons(pageList) {
 	}
 	$('.pagination ul li a').first().addClass('active');
 
-	//Add click listeners
+	//adds click listeners to the anchor elements, which initiates the showPages function
 	  $(".pagination ul li a").on("click", function(e) {
 	    var pageSelection = parseInt($(this)[0].text) - 1;
 	    showPages(pageSelection, pageList);
@@ -56,9 +57,9 @@ function appendButtons(pageList) {
 	  });
 }
 
-	
+
 // Search function finds both name and/or email. If no results are found, change the header H2 to display No Results, otherwise display default Students title. On firing of the searchList, check input value to see if matches, if there are matches, generate the new student array & display appropriate list of buttons.
-function searchList() {	
+function searchList() {
     var searchTerm = $('#search').val().toLowerCase().trim();
 
         var filteredStudents = studentItems.filter(function(i) {
@@ -82,7 +83,7 @@ function searchList() {
         showPages(0, paginated_students);
 }
 
-// Inits
+// this initiates the functions so they will run
 appendButtons(studentList);
 showPages(0, studentList);
 
